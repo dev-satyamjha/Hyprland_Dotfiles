@@ -20,14 +20,14 @@ __    __                            __                         __
 </p>
 
 <p align="center">
-  <img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/1.jpg" width="100%">
+  <img src="./Assests/Screenshots/1.jpg" width="100%">
 
 <p align="center">
-  <img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/2.jpg" width="100%">
+  <img src="./Assests/Screenshots/2.jpg" width="100%">
 </p>
 
 <p align="center">
-  <img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/12.png" width="100%">
+  <img src="./Assests/Screenshots/12.png" width="100%">
 </p>
 
 ## ✨ Features
@@ -60,31 +60,39 @@ __    __                            __                         __
 
 <details>
 
+<summary> Waybar & Rofi </summary>
+
 | Waybar | Rofi |
 |--------|------|
-| <p align="center"><img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/12.jpg" width="90%"></p> | <p align="center"><img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/13.jpg" width="90%"></p> |
+| <p align="center"><img src="./Assests/Screenshots/5.jpg" width="90%"></p> | <p align="center"><img src="./Assests/Screenshots/13.jpg" width="90%"></p> |
 
 </details>
 
 <details>
+
+<summary> Albert & Swaync </summary>
 
 | Albert | Swaync |
 |--------|------|
-| <p align="center"><img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/7.jpg" width="90%"></p> | <p align="center"><img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/6.jpg" width="90%"></p> |
+| <p align="center"><img src="./Assests/Screenshots/7.jpg" width="90%"></p> | <p align="center"><img src="./Assests/Screenshots/6.jpg" width="90%"></p> |
 
 </details>
 
 <details>
 
+<summary> Wlogout & Dolphin </summary>
+
 | wlogout | Dolphin |
 |--------|------|
-| <p align="center"><img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/11.jpg" width="90%"></p> | <p align="center"><img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/8.jpg" width="90%"></p> |
+| <p align="center"><img src="./Assests/Screenshots/11.jpg" width="90%"></p> | <p align="center"><img src="./Assests/Screenshots/8.jpg" width="90%"></p> |
 
 </details>
 
+---
+
 <p align="center">
-  <img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/9.jpg" width="48%">
-  <img src="/home/satyam/Documents/Hyprland/Hyprland_Dotfiles/Assests/Screenshots/10.jpg" width="48%">
+  <img src="./Assests/Screenshots/9.jpg" width="48%">
+  <img src="./Assests/Screenshots/10.jpg" width="48%">
 </p>
 
 ## 🚀 Installation
@@ -98,4 +106,4 @@ git clone https://github.com/dev-satyamjha/Hyprland_Dotfiles.git
 
 Inspired by:
 - Hyprland community configs
-- Special thanks to @harshnarayanjha for making me belief into Hyprland and taking all my initial and current bugs into his hand
+- Special thanks to [@HarshNarayanJha](https://github.com/HarshNarayanJha) for making me believe into Hyprland and taking all my initial and current bugs into his hand
