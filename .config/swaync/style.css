@@ -1,0 +1,62 @@
+:root {
+    --cc-bg: rgba(120, 120, 120, 0.5);
+    --noti-bg: 110, 110, 110;
+    --noti-bg-alpha: 0.3;
+    --noti-bg-focus: rgba(130, 130, 130, 0.3);
+    --noti-close-bg: rgb(78, 78, 78);
+    --noti-close-bg-hover: rgb(94, 94, 94);
+    --text-color: rgb(255, 255, 255);
+    --text-color-disabled: rgb(70, 70, 70);
+
+    --notification-icon-size: 52px;
+    --notification-icon-radius: 32px;
+    --notification-icon-size-cc: 36px;
+    --notification-app-icon-size: 24px;
+    --notification-group-icon-size: 32px;
+    --widget-row-icon-size: 32px;
+
+    --border-radius: 30px;
+    --border-width: 1px;
+    --border-width-top: 2px;
+
+    --notification-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+        0 2px 6px 2px rgba(0, 0, 0, 0.3);
+    --font-size-body: 15px;
+    --font-size-summary: 16px;
+    --font-size-time: 14px;
+    --font-size-icon: 1.6rem;
+    /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
+    --hover-tranistion: background 0.15s ease-in-out;
+    --group-collapse-tranistion: opacity 400ms ease-in-out;
+    --hover-transition: var(--hover-tranistion);
+    --group-collapse-transition: var(--group-collapse-tranistion);
+
+    --mpris-album-art-overlay: rgba(0, 0, 0, 0.55);
+    --mpris-button-hover: rgba(0, 0, 0, 0.5);
+    --mpris-album-art-icon-size: 96px;
+    --mpris-album-art-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+
+    --3d-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.15), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Fallback for older CSS themes */
+@define-color cc-bg rgba(120,120,120, 0.3);
+@define-color noti-bg rgba(130, 130, 130, 0.3);
+@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
+@define-color noti-close-bg rgba(255, 255, 255, 0.1);
+@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+@define-color text-color rgb(255, 255, 255);
+@define-color text-color-disabled rgb(120, 120, 120);
+
+
+@import "/home/satyam/.config/swaync/colors-swaync.css";
+
+@define-color critical-red #FFAA9E;
+@define-color critical-text #831215;
+@define-color notification-border #A5C6CD;
+
+@import "styles/notifications.css";
+@import "styles/control-center.css";
+

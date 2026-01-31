@@ -1,0 +1,266 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+
+  "positionX": "right",
+  "positionY": "top",
+
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": false,
+
+  "cssPriority": "user",
+
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+
+  "control-center-width": 400,
+  "control-center-height": 1000,
+  "control-center-exclusive-zone": true,
+
+  "notification-window-width": 400,
+  "notification-window-height": 500,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+
+  "timeout": 9,
+  "timeout-low": 6,
+  "timeout-critical": 0,
+
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+
+  "scripts": {
+    "whatsapp-desktop": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/whatsapp.mp3",
+      "app-name": "Google Chrome"
+    },
+
+    "zen": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/zen.mp3",
+      "app-name": "Zen"
+    },
+    "battery10": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/battery_10.mp3",
+      "app-name": "Battery Status",
+      "summary": "^10%"
+    },
+    "battery15": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/battery_15.mp3",
+      "app-name": "Battery Status",
+      "summary": "^15%"
+    },
+    "battery100": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/full_battery.mp3",
+      "app-name": "Battery Status",
+      "summary": "^100%"
+    },
+
+    "charger_connected": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/charger_connected.mp3",
+      "summary": "Charger Connected",
+      "app-name": "Power"
+    },
+
+    "charger_disconnected": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/charger_disconnected.mp3",
+      "summary": "Charger Disconnected",
+      "app-name": "Power"
+    },
+    "color-picker": {
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/color.mp3",
+      "summary": "^Copied Color$"
+    },
+    "device-added-sound": {
+      "summary": "^Device added$",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/device-added.mp3"
+    },
+    "device-removed-sound": {
+      "summary": "^Device removed$",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/unmount.mp3"
+    },
+    "device-unmounted-sound": {
+      "summary": "^Device unmounted$",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/device-disconnected.mp3"
+    },
+    "connection-off": {
+      "summary": "^Disconnected$",
+      "body": "^The network connection has been disconnected.$",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/network_off.mp3"
+    },
+    "connection-established": {
+      "summary": "^Connection Established$",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/Network_on.mp3"
+    },
+    "bluetooth-connect": {
+      "body": "^Connected$",
+      "app-name": "blueman",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/bluetooth_on.mp3"
+    },
+
+    "bluetooth-disconnect": {
+      "body": "^Disconnected$",
+      "app-name": "blueman",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/bluetooth_off.mp3"
+    },
+
+    "albert-timer-sound": {
+      "app-name": "albert",
+      "summary": "^Timer:",
+      "body": "^Expired at",
+      "exec": "/home/satyam/.config/hypr/scripts/notification-sound.sh /home/satyam/Music/Notification_Sounds/timer-complete.mp3"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [
+    "buttons-grid",
+    "backlight",
+    "volume",
+    "dnd",
+    "mpris",
+    "title",
+    "notifications"
+  ],
+  "widget-config": {
+    "notifications": {
+      "vexpand": true
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "mpris": {
+      "autohide": false,
+      "show-album-art": "always",
+      "loop-carousel": true
+    },
+    "backlight": {
+      "label": "󰃠",
+      "subsystem": "backlight",
+      "device": "amdgpu_bl1"
+    },
+    "volume": {
+      "label": "󱄠",
+      "expand-button-label": "󰡏",
+      "collapse-button-label": "󰡍",
+      "show-per-app": true,
+      "show-per-app-icon": true,
+      "empty-list-label": "No apps playing audio",
+      "show-per-app-label": true
+    },
+    "buttons-grid": {
+      "buttons-per-row": 4,
+      "actions": [
+        {
+          "label": "   Wi-Fi",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
+          "update-command": "sh -c '[[ $(nmcli r wifi) == \"enabled\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "󰀝",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c 'rfkill list | grep -q \"yes\" && rfkill unblock all || rfkill block all'",
+          "update-command": "sh -c '[[ -n $(rfkill list | rg -o \"yes\") ]] && echo false || echo true'"
+        },
+
+        {
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+          "update-command": "sh -c 'wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo false || echo true'"
+        },
+        {
+          "label": "",
+          "type": "normal",
+          "command": "sh -c 'qalculate-qt'"
+        },
+
+        {
+          "label": "   BT",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && rfkill unblock bluetooth || rfkill block bluetooth'",
+          "update-command": "sh -c '[[ -n $(rfkill list bluetooth | rg -o yes ) ]] && echo false || echo true'"
+        },
+
+        {
+          "label": "󰑋",
+          "type": "normal",
+          "command": "gpu-screen-recorder-gtk"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "active": true,
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+          "update-command": "sh -c 'wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && echo false || echo true'"
+        },
+
+        {
+          "label": "󰛧",
+          "type": "normal",
+          "command": "sleep 0.5 && swaync-client -cp && hyprctl dispatch dpms off"
+        },
+
+        {
+          "label": "󰕦",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && /home/satyam/user-scripts/cycle_android_ringer.sh -m 1 || /home/satyam/user-scripts/cycle_android_ringer.sh -m 0'",
+          "update-command": "sh -c '[[ $(/home/satyam/user-scripts/cycle_android_ringer.sh -g) == \"1\" ]] && echo true || echo false'"
+        },
+
+        {
+          "label": "󰌾",
+          "type": "normal",
+          "command": "loginctl lock-session"
+        },
+        {
+          "label": "  ",
+          "type": "normal",
+          "command": "flameshot gui"
+        },
+        {
+          "label": "󱠨",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == false ]] && ~/.config/hypr/scripts/night-light.sh || ~/.config/hypr/scripts/night-light.sh'",
+          "update-command": "sh -c '[[ -n $(hyprctl hyprsunset temperature | rg -o 6000) ]] && echo false || echo true'"
+        }
+      ]
+    }
+  }
+}

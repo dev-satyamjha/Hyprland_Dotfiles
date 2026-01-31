@@ -1,0 +1,347 @@
+* {
+    all: unset;
+    font-size: 1.2rem;
+    font-family: "SF Pro Display", "Iosevka Nerd Font";
+}
+
+notificationwindow,
+blankwindow,
+blankwindow {
+    background: transparent;
+}
+
+/* Transparent space around a notification */
+.notification-row {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* The actual floating notification background */
+.floating-notifications.background .notification-row .notification-background {
+    border-radius: var(--border-radius);
+    border-top-right-radius: 0;
+    margin: 8px;
+    margin-top: 16px;
+    padding: 0;
+}
+
+/* The actual notification */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification {
+    background: alpha(@background, 0.6);
+    border-radius: var(--border-radius);
+    border-top-right-radius: 0;
+    border: var(--border-width) solid @notification-border;
+    border-top-width: var(--border-width-top);
+    border-bottom-width: 0.2px;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Hover */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification:hover {
+    background: alpha(@background, 0.7);
+}
+
+/* Critical Notification */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification.critical {
+    border: calc(var(--border-width) * 2) solid @critical-red;
+    background: alpha(@critical-red, 0.8);
+}
+
+/* Critical hover */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification.critical:hover {
+    background: alpha(@critical-red, 0.7);
+}
+
+/* Main Content */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content {
+    margin: 12px 12px;
+    min-height: 36px;
+}
+
+/* Image */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .image {
+    -gtk-icon-filter: none;
+    -gtk-icon-size: var(--notification-icon-size);
+    border-radius: 8px;
+    margin: 4px 4px;
+}
+
+/* App Icon */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .app-icon {
+    -gtk-icon-filter: none;
+    -gtk-icon-size: var(--notification-app-icon-size);
+    -gtk-icon-shadow: 0 1px 4px black;
+}
+
+/* Action buttons */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-alt-actions {
+    background: none;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-action {
+    border-radius: 0;
+    background-color: alpha(@background-alt, 0.6);
+    margin-top: 2px;
+    border: var(--border-width) solid @divider;
+    border-right-width: 0;
+    border-bottom-width: 0.2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    transition: background 0.1s ease-in-out;
+}
+
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-action > button {
+    color: @on-background-alt;
+    font-size: 0.8rem;
+}
+
+/* First action */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-action:first-child {
+    border-left-width: 0;
+    border-bottom-left-radius: var(--border-radius);
+}
+
+/* Last action */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-action:last-child {
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-action:hover {
+    background-color: alpha(@background-alt, 0.8);
+    color: @on-background-hover;
+}
+
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-action:active {
+    background-color: @background-alpha;
+    color: @accent;
+}
+
+/* Summary */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .summary {
+    font-weight: 800;
+    margin-left: 8px;
+    margin-bottom: 2px;
+    font-size: 1.3rem;
+    color: @text;
+}
+
+/* Critical summary */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification.critical
+    .notification-default-action
+    .notification-content
+    .summary {
+    color: @critical-text;
+}
+
+/* Body */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .body {
+    color: @text-alt;
+    margin-left: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+/* Critical body */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification.critical
+    .notification-default-action
+    .notification-content
+    .body {
+    color: shade(@critical-text, 1.4);
+}
+
+/* Close Button */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .close-button {
+    border-radius: 24px;
+    background-color: alpha(@background, 0.4);
+    color: @text-alt;
+    padding: 4px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .close-button:hover {
+    background-color: alpha(@background, 0.8);
+    color: @text;
+}
+
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .close-button:active {
+    background-color: @background-alpha;
+    color: @accent;
+}
+
+/* Progress */
+.notification.critical progress {
+    background-color: @accent;
+}
+
+.notification.low progress,
+.notification.normal progress {
+    background-color: @accent;
+}
+
+/* Body Image */
+.floating-notifications.background
+    .notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .body-image {
+    margin-top: 4px;
+    background-color: white;
+    -gtk-icon-filter: none;
+}
+
+/* Inline Reply */
+.notification-row .inline-reply .inline-reply-button:hover {
+    background: @primary;
+}
+
+.notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .inline-reply {
+    margin-top: 4px;
+}
+
+.notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .inline-reply
+    .inline-reply-entry {
+    padding: 5px 10px;
+    background: @background-reply;
+    color: @text;
+    border-radius: var(--border-radius);
+    border: 1px solid @divider;
+    caret-color: @text-alt;
+}
+
+.notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .inline-reply
+    .inline-reply-button {
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    background: @accent;
+    color: @text;
+}
+
+.notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .inline-reply
+    .inline-reply-button:disabled {
+    background: initial;
+    color: @text-alt;
+    border-color: transparent;
+}
+
+.notification-row
+    .notification-background
+    .notification
+    .notification-default-action
+    .notification-content
+    .inline-reply
+    .inline-reply-button:hover {
+    background: shade(@accent, 1.4);
+}
+
+

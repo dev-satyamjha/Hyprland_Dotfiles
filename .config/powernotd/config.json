@@ -1,0 +1,69 @@
+{
+  "notifications": [
+	{
+	  "level": 80,
+	  "urgency": "Low",
+	  "title": "Battery Status",
+	  "message": "Elegantooo {}%.."
+	},
+{
+      "level": 95,
+      "urgency": "Low",
+      "title": "Battery Status",
+      "message": "Need more people like you {}%.."
+    },		
+    {
+      "level": 30,
+      "urgency": "Low",
+      "title": "Battery Status",
+      "message": "Time to refill {}%.."
+    },
+    {
+      "level": 20,
+      "urgency": "Normal",
+      "title": "Battery Status",
+      "message": "I think you should get serious {}%"
+    },
+    {
+      "level": 15,
+      "urgency": "Critical",
+      "time_secs": 10000,
+      "title": "Battery Status",
+      "message": "Bhai mazak nahi chal raha hai {}%"
+    },
+    {
+      "level": 10,
+      "urgency": "Critical",
+      "time_secs": 10000,
+      "title": "Battery Status",
+      "message": "Bhai gussa hai kya {}%"
+    },
+    {
+      "level": 5,
+      "urgency": "Critical",
+      "time_secs": 10000,
+      "title": "Critical Battery Status",
+      "message": "Itna chubhne laga hoon?{}%"
+    },
+    {
+      "level": 2,
+      "urgency": "Critical",
+      "time_secs": 10000,
+      "title": "Critical Battery Status",
+      "message": "Isse badhiya toh mujhe dismantle hi kardeta{}%"
+    },
+    {
+      "level": 1,
+      "urgency": "Critical",
+      "time_secs": 10000,
+      "title": "Critical Battery Status",
+      "message": "Is sansar ke log badhiya nahi hai bhagwan{}%"
+    }
+  ],
+  "full_notification": {
+    "urgency": "Low",
+    "enabled": true,
+    "title": "Battery Status",
+    "message": "Sometimes overeating is good too"
+  }
+}

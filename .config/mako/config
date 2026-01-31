@@ -1,0 +1,99 @@
+anchor=top-right
+layer=top
+font=SF Pro Rounded 12
+background-color=#3434349A
+text-color=#EFEFEF
+width=450
+height=600
+max-history=20
+max-visible=5
+margin=20,20,20
+padding=15
+border-size=3
+border-color=#121212FF
+border-radius=10
+default-timeout=3000
+group-by=summary
+#on-button-middle=dismiss --no-history
+#on-button-left=exec makoctl menu rofi -dmenu 'Select action: '
+on-button-right=dismiss
+icons=1
+icon-path=/usr/share/icons/Colloid-Dark/
+markup=1
+actions=1
+
+format=%a\n<b>%s</b>\n\n%b
+ignore-timeout=0
+sort=-time
+
+
+[app-name="KDE Connect"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/alerts/modern/Note.ogg --no-resume-playback
+default-timeout=3000
+
+[app-name="Google Chrome"]
+on-notify=exec mpv /home/satyam/.local/share/sounds/incoming-message-online-whatsapp.ogg --no-resume-playback
+background-color=#14d94f55
+border-color=#14d94fff
+
+[app-name="Telegram"]
+background-color=#229ED955
+border-color=#229ED9
+
+[app-name="albert"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/alerts/modern/Input.m4r --no-resume-playback
+default-timeout=2000
+
+[summary="Incoming Call"]
+on-notify=exec mpv "/home/harshnj/.local/share/sounds/MacOS/facetime/multiway_invitation.caf" --no-resume-playback
+
+[body="Ping!"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/error/Ping.ogg --no-resume-playback
+
+[summary="Copied Color"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/error/Frog.aiff --no-resume-playback
+
+[summary="Charger Connected"]
+on-notify=exec mpv --volume=85 /home/harshnj/.local/share/sounds/MacOS\ Sounds/stereo/power-plug.ogg --no-resume-playback
+
+[summary="Charger Disconnected"]
+on-notify=exec mpv --volume=100 /home/harshnj/.local/share/sounds/MacOS\ Sounds/stereo/power-unplug.ogg --no-resume-playback
+
+[summary="Battery Status"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/error/Submarine.ogg --no-resume-playback
+
+[summary="Critical Battery Status"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/error/Sosumi.ogg --no-resume-playback
+
+[summary="Battery Full"]
+on-notify=exec mpv /home/harshnj/.local/share/sounds/MacOS/error/Purr.aiff --no-resume-playback
+
+[summary="Device added"]
+on-notify=exec mpv "/home/harshnj/.local/share/sounds/MacOS Sounds/stereo/device-added.ogg" --no-resume-playback
+
+[summary="Device removed"]
+on-notify=exec mpv "/home/harshnj/.local/share/sounds/MacOS Sounds/stereo/device-removed.ogg" --no-resume-playback
+
+[summary="Device unmounted"]
+on-notify=exec mpv "/home/harshnj/.local/share/sounds/MacOS/system/volume_mount_glade.aif" --no-resume-playback
+
+[summary="Connection Established"]
+on-notify=exec mpv "/usr/share/sounds/freedesktop/stereo/network-connectivity-established.oga" --no-resume-playback
+
+[grouped]
+format=<b>%s</b>\n\n%b
+
+[urgency=high]
+border-color=#FF4444
+background-color=#FF444455
+text-color=#EFEFEF
+default-timeout=10000
+layer=overlay
+
+[mode=do-not-disturb]
+invisible=1
+on-notify=none
+
+# makoctl reload // Load last config
+# makoctl restore // Load last notify
+

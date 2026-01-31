@@ -1,0 +1,76 @@
+configuration {
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+}
+
+window {
+    width: 500px;
+    height: 450px;
+    
+    border: 2px;
+    border-color: #FF4500; 
+    border-radius: 12px;
+    
+    background-color: #1E1E1E;
+}
+
+mainbox {
+    background-color: transparent;
+    padding: 20px;
+    spacing: 15px;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: #2D2D2D;
+    border-radius: 8px;
+    padding: 12px;
+    text-color: #FFFFFF;
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: #FF4500;
+    margin: 0 10px 0 0;
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    background-color: transparent;
+    text-color: #FFFFFF;
+    placeholder: "Search Presets...";
+    placeholder-color: #666666;
+}
+
+listview {
+    background-color: transparent;
+    lines: 9;
+    columns: 1;
+    scrollbar: false;
+}
+
+element {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    text-color: #DDDDDD;
+    margin: 4px 0;
+}
+
+element selected {
+    background-color: #FF4500;
+    text-color: #FFFFFF;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 15px 0 0;
+    background-color: transparent;
+}

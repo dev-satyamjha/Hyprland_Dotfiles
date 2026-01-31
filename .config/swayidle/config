@@ -1,0 +1,12 @@
+lock '/home/satyam/.config/hypr/scripts/lock.sh -p'
+unlock 'pkill -USR1 hyprlock && hyprctl dispatch dpms on'
+
+before-sleep '/home/satyam/.config/hypr/scripts/lock.sh'
+after-resume 'hyprctl dispatch dpms on'
+
+#timeout 100 'brightnessctl -s set 10' resume 'brightnessctl -r'
+timeout 120 'brillo -O && brillo -u 150000 -S 20' resume 'brillo -u 150000 -I'
+
+timeout 900 '/home/satyam/.config/hypr/scripts/lock.sh -p'
+
+timeout 150 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on && brillo -u 150000 -I'

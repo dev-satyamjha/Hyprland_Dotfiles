@@ -1,0 +1,436 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    // remove height to make it configured via style only
+    // "height": 3,
+    "exclusive": true,
+    "fixed-center": false,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+    "margin": 1,
+
+    "reload_style_on_change": true,
+
+    "modules-left": [
+        "hyprland/workspaces",
+            "hyprland/window"
+        // "custom/cava"
+    ],
+
+    /* "modules-center": [
+        "custom/weather",
+        "group/hardware"
+    ], */
+
+    "modules-right": [
+        "custom/weather",
+        "group/hardware",
+        "backlight",
+        // "network",
+        "network#speed",
+
+        "pulseaudio",
+        "pulseaudio#microphone",
+        // "bluetooth",
+
+        "privacy",
+
+        "tray",
+
+        //"custom/power"
+        "clock",
+        "group/batteries",
+
+        // "mpris",
+        // "custom/notification",
+        "group/utilities",
+
+        "custom/divider",
+        "user",
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon} {windows}",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "",
+            "class<firefox>": "",
+            "class<firefox> title<.*github.*>": "",
+            "class<org.kde.konsole>": "",
+            "class<sublime_text>": "󰅩",
+            "foot": "",
+            "code": "󰨞",
+            "class<chrome-web.whatsapp.com__-Default>": "",
+            "class<dev.zed.Zed>": "󰅱",
+            "title<Picture-in-Picture>": "󰹗",
+            "title<Github Desktop>": "",
+        },
+        "format-window-separator": " ",
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "persistent-workspaces": {
+        }
+    },
+
+    "hyprland/window": {
+        "format": "  {}",
+        // 
+        "separate-outputs": true,
+        "icon": true
+    },
+
+    "idle_inhibitor": {
+       "format": "{icon}",
+        "format-icons": {
+           "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "clock": {
+        "format": "{:%a %e %b %Y  󰥔  %I:%M:%S %p}",
+        "interval": 1,
+        "format-alt": "{:%R 󰃭 %d·%m·%y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "smooth-scrolling-threshold": 2,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+            "on-click-middle": "shift_reset"
+        }
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "󰍛 {usage}%",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰾆  {percentage}%",
+        "format-alt": "󰾅  {used}GB",
+        "tooltip": true,
+        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+    },
+
+     "custom/nightlight": {
+        "format": "{}",
+        "exec": "$HOME/.config/hypr/scripts/night-light.sh -s",
+        "return-type": "json",
+        "on-click": "$HOME/.config/hypr/scripts/night-light.sh",
+        "interval": "once",
+        "signal": 3
+    },
+
+    "temperature": {
+        "interval": 60,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "exec": "exec /home/satyam/.config/waybar/scripts/weather.py",
+        "restart-interval": 1800,
+        "exec-on-event": true,
+        "return-type": "json",
+        "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/e7f334a71d3794f82abe2c17aa164652a635cfb6d4cc6afcc3bddd9fd75944c2",
+        "signal": 5
+    },
+
+    "custom/gpuinfo": {
+        "exec": " ~/.config/hypr/scripts/gpuinfo.sh",
+        "return-type": "json",
+        "format": " {}",
+        "interval": 5, // once every 5 seconds
+        "tooltip": true,
+        "max-length": 1000
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "memory",
+            "cpu",
+            "temperature"
+        ],
+    },
+
+    "mpris": {
+        "format": "{player_icon}",
+        "format-paused": "{status_icon}",
+        "player-icons": {
+            "default": " ",
+            "firefox": "  ",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": " "
+        }
+        // "ignored-players": ["firefox"]
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        //"format": "{icon}",
+        "tooltip-format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        //"min-length": 4
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": " Wired",
+        "tooltip-format": " {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": " Disconnected",
+        "format-alt": " {essid}",
+        "interval": 1
+    },
+
+    "network#speed": {
+        "interface": "wlan0",
+        "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "interval": 1
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-connected": " {num_connections}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": " {device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}",
+        "format-muted": "",
+        "on-click": "pavucontrol -t 3",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%-",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 5,
+        "ignored-sinks": ["Easy Effects Sink"],
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SOURCE@ 1%+",
+        "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SOURCE@ 1%-",
+        "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+        "scroll-step": 5
+    },
+
+    "custom/phonebattery": {
+         "exec": "qdbus org.kde.kdeconnect /modules/kdeconnect/devices/74ca8bf9_1c1e_4de0_bcf7_16ee370059b2/battery org.kde.kdeconnect.device.battery.charge",
+         "format": "  {}%",
+         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+         "interval": 3600, // once every day
+         "tooltip": true,
+         "tooltip-format": "Phone battery {}%"
+     },
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 16,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+
+    "tray": {
+        "icon-size": 24,
+        "spacing": 8,
+        "show-passive-items": false,
+    },
+
+    "battery": {
+        "states": {
+            "good": 85,
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 10,
+        "format": "{icon} {capacity}% | {power}W",
+        //"format-charging": " {icon} {capacity}%",
+        //"format-plugged": " {icon} {capacity}%", // 
+        "format-charging": "  {capacity}% | {power}W",
+        "format-critical": " {capacity}%",
+        "format-alt": "{icon} | {time} | Health: {health}%",
+        // "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        // "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-icons": [" ", " ", " ", " ", " "],
+        "tooltip-format": "Health: {health}% | Cycles: {cycles}",
+        // "format-icons": ["", "", "", "", "", "", ""],
+        // "format-icons": [" ", " ", " ", " ", " "]
+        "events": {
+           "on-charging-80": "notify-send -a 'Battery Status' -u low '80% meal eaten'",
+           "on-charging-90": "notify-send -a 'Battery Status' -u low '90%...Elengantooo!!!'",
+           "on-charging-95": "notify-send -a 'Battery Status' -u low '95%...Topper bhai Topper!'",
+           "on-charging-100": "notify-send -a 'Battery Status' -u low '100%...Poora pet bhar diya bhai tum toh!'",
+           "on-discharging-95": "notify-send -a 'Battery Status' -u low '95%...Too much luxury!!'",
+           "on-discharging-81": "notify-send -a 'Battery Status' -u low '80%...Abhi apna saath lamba chalega!'",
+           "on-discharging-20": "notify-send -a 'Battery Status' -u low '20%😱😱!!Back lag jayega..kya kar raha hai bhai!?'",
+           "on-discharging-30": "notify-send -a 'Battery Status' -u low '30% isn't the passing marks though. Charge More!'",
+           "on-discharging-25": "notify-send -a 'Battery Status' -u low '25%!!Back lag jayega..kya kar raha hai bhai!?'",
+           "on-discharging-critical": "notify-send -a 'Battery Status' -u critical '15% Hogaya Bhai..Bacha le!'",
+           "on-discharging-11": "notify-send -a 'Battery Status' -u critical '10%... Khatam Hojayenge Bhai...'",
+           "on-discharging-5": "notify-send -a 'Battery Status' -u critical '5%... Electricity..Charge..Charge..!!'",
+           "on-discharging-2": "notify-send -a 'Battery Status' -u critical '2%..Aaaaahhh...!'",
+           "on-discharging-1": "notify-send -a 'Battery Status' -u critical '1%...☠️☠️☠️☠️!'",
+        },
+    },
+
+    "upower#headset": {
+        "native-path": "/org/bluez/hci0/dev_2C_BE_EB_E3_B1_F6",
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-spacing": 10,
+        "format": "󰋎  {percentage}",
+        "hide-if-empty": true,
+        "show-icon": false
+    },
+
+    "group/batteries": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "battery",
+            "custom/phonebattery",
+            "upower#headset"
+        ]
+    },
+
+    "custom/wallchange": {
+        "format": "{}",
+        "exec": "echo ; echo 󰆊 switch wallpaper",
+        "on-click": "~/.config/hypr/scripts/swwwallpaper.sh -n",
+        "on-click-right": "~/.config/hypr/scripts/swwwallpaper.sh -p",
+        "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/swwwallselect.sh",
+        "interval" : 86400, // once every day
+        "tooltip": true
+    },
+
+    "custom/power": {
+        "format": "{}",
+        "exec": "echo ; echo  logout",
+        "on-click": "nwgbar --protocol layer-shell -b 3",
+        "interval" : 86400, // once every day
+        "tooltip": true
+    },
+
+    "user": {
+        "format": "  Satyam Jha",
+        "interval": 86400,
+        "height": 30,
+        "width": 30,
+        "icon": true,
+    },
+
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "custom/divider": {
+        "format": " ",
+      "interval": "once",
+      "tooltip": false
+    },
+
+   "custom/notification": {
+        "tooltip": true,
+        "format": "{icon} {text}",
+      "format-icons": {
+        "notification": "",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "",
+        "inhibited-notification": "",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "",
+        "dnd-inhibited-none": ""
+      },
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-middle": "swaync-client -d -sw",
+        "return-type": "json",
+        "restart-interval": 1,
+        "escape": true,
+        "signal": 2
+    },
+
+    "group/utilities": {
+      "orientation": "horizontal",
+      "modules": [
+        "mpris",
+        "custom/nightlight",
+        "idle_inhibitor",
+        "custom/notification"
+      ]
+    },
+}
